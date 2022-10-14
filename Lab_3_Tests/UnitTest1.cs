@@ -26,7 +26,10 @@ namespace Lab_3_Tests
                 if (course.Enrollment.CourseStudents[course.Title].Contains(item))
                     allAdded = true;
                 else
+                {
                     allAdded = false;
+                    break;
+                }
             }
 
             Assert.True(allAdded);
@@ -92,7 +95,10 @@ namespace Lab_3_Tests
             {
                 course.RemoveStudent(item);
                 if (course.Enrollment.CourseStudents[course.Title].Contains(item))
+                {
                     allRemoved = false;
+                    break;
+                }
                 else
                     allRemoved = true;
             }
@@ -117,7 +123,12 @@ namespace Lab_3_Tests
                 if (course.Enrollment.CourseStudents[course.Title].Contains(item))
                     allAdded = true;
                 else
+                {
                     allAdded = false;
+                    break;
+                }
+
+
             }
 
             Assert.True(allAdded);
